@@ -42,7 +42,4 @@ RUN echo "ServerName localhost" >> /etc/apache2/apache2.conf \
 RUN mkdir -p /app && rm -rf /var/www/html && ln -s /app /var/www/html
 COPY . /app
 WORKDIR /app
-RUN chmod 755 ./start.sh
-
-EXPOSE 80
-CMD ["./start.sh"]
+CMD [ "php", "./install.php" ]
